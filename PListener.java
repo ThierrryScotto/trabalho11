@@ -77,6 +77,16 @@ public interface PListener extends ParseTreeListener {
 	 */
 	void exitExecuta(PParser.ExecutaContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PParser#comando_repita}.
+	 * @param ctx the parse tree
+	 */
+	void enterComando_repita(PParser.Comando_repitaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PParser#comando_repita}.
+	 * @param ctx the parse tree
+	 */
+	void exitComando_repita(PParser.Comando_repitaContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PParser#chamada_funcao}.
 	 * @param ctx the parse tree
 	 */

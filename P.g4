@@ -14,11 +14,13 @@ define          : define_func;
 define_func     : ID '(' (expr (',' expr)*)? ')' '{' DECLARA declara* EXECUTA executa* '}';
 
 executa         : comando_se
+                | comando_repita
                 | atribuicao
                 | comando_imprime
                 | comando_retorna
                 ;
 
+comando_repita  : REPITA executa* ATE expr_logica;
 chamada_funcao  : ID '(' (expr (',' expr)*)? ')';
 atribuicao      : ID ':=' expr;
 
@@ -53,6 +55,8 @@ SE              : 'se';
 ENTAO           : 'entao';
 SENAO           : 'senao';
 FIMSE           : 'fimse';
+REPITA          : 'REPITA';
+ATE             : 'ATE';
 
 NUMERO_REAL     : (DIGITO+ '.' DIGITO* | DIGITO* '.' DIGITO+);
 NUMERO_INTEIRO  : DIGITO+;
