@@ -31,7 +31,7 @@ expr            : NUMERO_REAL
                 | expr ('+' | '-') expr
                 ;
 
-comando_retorna : RETORNA (expr | expr_logica | expr_literal) ';' ;
+comando_retorna : RETORNA (expr | expr_logica | expr_literal);
 comando_imprime : IMPRIME '(' expr_literal ')' ;
 expr_literal    : expr ('&' expr)*;
 comando_se      : SE expr_logica ENTAO executa* (SENAO executa*)? FIMSE;
