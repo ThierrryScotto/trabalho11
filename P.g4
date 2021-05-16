@@ -11,7 +11,7 @@ tipo            : TEXTO
                 ;
 
 define          : define_func;   
-define_func     : ID '(' (ID (',' ID)*)? ')' '{' DECLARA declara* EXECUTA executa* '}';
+define_func     : ID '(' (expr (',' expr)*)? ')' '{' DECLARA declara* EXECUTA executa* '}';
 
 executa         : comando_se
                 | atribuicao
@@ -22,8 +22,8 @@ executa         : comando_se
 chamada_funcao  : ID '(' (expr (',' expr)*)? ')';
 atribuicao      : ID ':=' expr;
 
-expr            : NUMERO_INTEIRO 
-                | NUMERO_REAL 
+expr            : NUMERO_REAL 
+                | NUMERO_INTEIRO
                 | ID
                 | STRING
                 | chamada_funcao
@@ -54,10 +54,10 @@ ENTAO           : 'entao';
 SENAO           : 'senao';
 FIMSE           : 'fimse';
 
-NUMERO_INTEIRO  : DIGITO+;
 NUMERO_REAL     : (DIGITO+ '.' DIGITO* | DIGITO* '.' DIGITO+);
+NUMERO_INTEIRO  : DIGITO+;
 DIGITO          : [0-9];
-ID              : (LETRA | '_')+ (LETRA | DIGITO)*;
+ID              : LETRA ('_' | LETRA | DIGITO)*;
 LETRA           : [a-zA-Z];
 STRING          : '"' .*? '"';
 
