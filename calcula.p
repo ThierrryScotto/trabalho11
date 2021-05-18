@@ -16,6 +16,12 @@ programa
 				senao 
 					a := 500
 				fimse
+
+				a := 0
+				REPITA
+					a:=a+1
+				ATE a > 100
+				
 				retorna a
 		}
 
