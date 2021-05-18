@@ -1,3 +1,10 @@
+/*
+ALUNO : LUCAS DE SOUZA SILVA LIMA | Thierry Alberto Scotto dos Santos
+MATRÍCULA: 201917450  | 201825529
+TRABALHO 2: COMPILADORES
+COMPILADOR DA LINGUAGEM P
+ */
+ 
 grammar P;
 
 // parcer
